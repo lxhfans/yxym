@@ -5,7 +5,9 @@ import os
 
 # 目标URL列表
 urls = ['https://ip.164746.xyz/ipTop10.html', 
-        'https://cf.090227.xyz'
+        'https://cf.090227.xyz',
+        'https://www.cloudflare-cn.com/ips-v4/',
+        'https://www.182682.xyz/page/cloudflare/address_v4.html'
         ]
 
 # 正则表达式用于匹配IP地址
@@ -28,6 +30,10 @@ with open('ip.txt', 'w') as file:
         if url == 'https://ip.164746.xyz/ipTop10.html':
             elements = soup.find_all('tr')
         elif url == 'https://cf.090227.xyz':
+            elements = soup.find_all('tr')
+        if url == 'https://www.cloudflare-cn.com/ips-v4/':
+            elements = soup.find_all('tr')
+        elif url == 'https://www.182682.xyz/page/cloudflare/address_v4.html':
             elements = soup.find_all('tr')
         else:
             elements = soup.find_all('li')
